@@ -6,7 +6,9 @@ def readLastChar(fd,cnt):
 		print(fd.read1(1).decode('ascii'),end="")
 		fd.seek(cnt-1,2)
 		return readLastChar(fd,cnt-1)
-
+	else:
+		print(fd.read1(1).decode('ascii'),end="")
+		
 def main():
 	fileName = input("Enter File Name : ")
 	fd = open(fileName,"rb")
