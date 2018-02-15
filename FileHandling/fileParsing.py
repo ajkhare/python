@@ -15,25 +15,25 @@ def countLines(fd,subStr):
 	if(subStr[0] == '^'):
 		print("Inside ^")
 		while(line!=''):
-			line=fd.readline()
 			if(line.startswith(subStr[1:])):
 				cnt+=1
+			line=fd.readline()
 			
 	elif(subStr.endswith('$')):
 		print("Inside $")
 		while(line!=''):
-			line=fd.readline()
 			if(line.endswith(subStr[:len(subStr)-1]+"\n")):
 				cnt+=1
-	
+			line=fd.readline()
+			
 	else:
 		print("Inside else")
 		while(line!=''):
 			#print(line)
-			line=fd.readline()
 			if(line.__contains__(subStr)):
 				cnt+=1
-	
+			line=fd.readline()
+			
 	fd.seek(0)
 	print(cnt)
 	
